@@ -1,5 +1,6 @@
 <Solution>
   <Folder Name="/src/">
+    <File Path=".dockerignore" />
     <File Path="docker-compose.yml" />
     <File Path="Dockerfile" />
     <File Path="README.md" />
