@@ -2,6 +2,7 @@
   <Folder Name="/src/">
     <File Path="docker-compose.yml" />
     <File Path="Dockerfile" />
+    <File Path="README.md" />
     <Project Path="src/EduApoyos.API/EduApoyos.API.csproj" />
     <Project Path="src/EduApoyos.Application/EduApoyos.Application.csproj" />
     <Project Path="src/EduApoyos.Domain/EduApoyos.Domain.csproj" />

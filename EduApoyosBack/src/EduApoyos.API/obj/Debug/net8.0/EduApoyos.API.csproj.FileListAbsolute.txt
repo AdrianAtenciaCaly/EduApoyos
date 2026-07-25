@@ -161,3 +161,4 @@ C:\Users\Asus\Desktop\A3C\Code\EduApoyos\EduApoyosBack\src\EduApoyos.API\obj\Deb
 C:\Users\Asus\Desktop\A3C\Code\EduApoyos\EduApoyosBack\src\EduApoyos.API\obj\Debug\net8.0\EduApoyos.API.genruntimeconfig.cache
 C:\Users\Asus\Desktop\A3C\Code\EduApoyos\EduApoyosBack\src\EduApoyos.API\obj\Debug\net8.0\ref\EduApoyos.API.dll
 C:\Users\Asus\Desktop\A3C\Code\EduApoyos\EduApoyosBack\src\EduApoyos.API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\Asus\Desktop\A3C\Code\EduApoyos\EduApoyosBack\src\EduApoyos.API\obj\Debug\net8.0\EduApoyos.API.sourcelink.json

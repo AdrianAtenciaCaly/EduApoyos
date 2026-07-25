@@ -116,3 +116,4 @@ C:\Users\Asus\Desktop\A3C\Code\EduApoyos\EduApoyosBack\tests\EduApoyos.Applicati
 C:\Users\Asus\Desktop\A3C\Code\EduApoyos\EduApoyosBack\tests\EduApoyos.Application.Tests\obj\Debug\net8.0\EduApoyos.Application.Tests.pdb
 C:\Users\Asus\Desktop\A3C\Code\EduApoyos\EduApoyosBack\tests\EduApoyos.Application.Tests\obj\Debug\net8.0\EduApoyos.Application.Tests.genruntimeconfig.cache
 C:\Users\Asus\Desktop\A3C\Code\EduApoyos\EduApoyosBack\tests\EduApoyos.Application.Tests\obj\Debug\net8.0\ref\EduApoyos.Application.Tests.dll
+C:\Users\Asus\Desktop\A3C\Code\EduApoyos\EduApoyosBack\tests\EduApoyos.Application.Tests\obj\Debug\net8.0\EduApoyos.Application.Tests.sourcelink.json

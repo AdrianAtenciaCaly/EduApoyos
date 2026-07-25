@@ -3,6 +3,42 @@
   "WorkspaceRootPath": "C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{827E0CD3-B72D-47B6-A68D-7590B98EB39B}|src{827E0CD3-B72D-47B6-A68D-7590B98EB39B}|C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{827E0CD3-B72D-47B6-A68D-7590B98EB39B}|src{827E0CD3-B72D-47B6-A68D-7590B98EB39B}|solutionrelative:README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41041E2F-0B93-10FF-6FF9-D35532FAEF4A}|src\\EduApoyos.Infrastructure\\EduApoyos.Infrastructure.csproj|c:\\users\\asus\\desktop\\a3c\\code\\eduapoyos\\eduapoyosback\\src\\eduapoyos.infrastructure\\persistence\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41041E2F-0B93-10FF-6FF9-D35532FAEF4A}|src\\EduApoyos.Infrastructure\\EduApoyos.Infrastructure.csproj|solutionrelative:src\\eduapoyos.infrastructure\\persistence\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{07D2F389-91BA-69EF-9CC3-E1F050C10788}|tests\\EduApoyos.Application.Tests\\EduApoyos.Application.Tests.csproj|c:\\users\\asus\\desktop\\a3c\\code\\eduapoyos\\eduapoyosback\\tests\\eduapoyos.application.tests\\domainsupportrequesttests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{07D2F389-91BA-69EF-9CC3-E1F050C10788}|tests\\EduApoyos.Application.Tests\\EduApoyos.Application.Tests.csproj|solutionrelative:tests\\eduapoyos.application.tests\\domainsupportrequesttests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{07D2F389-91BA-69EF-9CC3-E1F050C10788}|tests\\EduApoyos.Application.Tests\\EduApoyos.Application.Tests.csproj|c:\\users\\asus\\desktop\\a3c\\code\\eduapoyos\\eduapoyosback\\tests\\eduapoyos.application.tests\\getsupportrequestsbystudentqueryhandlertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{07D2F389-91BA-69EF-9CC3-E1F050C10788}|tests\\EduApoyos.Application.Tests\\EduApoyos.Application.Tests.csproj|solutionrelative:tests\\eduapoyos.application.tests\\getsupportrequestsbystudentqueryhandlertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{07D2F389-91BA-69EF-9CC3-E1F050C10788}|tests\\EduApoyos.Application.Tests\\EduApoyos.Application.Tests.csproj|c:\\users\\asus\\desktop\\a3c\\code\\eduapoyos\\eduapoyosback\\tests\\eduapoyos.application.tests\\getsupportrequestbyidqueryhandlertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{07D2F389-91BA-69EF-9CC3-E1F050C10788}|tests\\EduApoyos.Application.Tests\\EduApoyos.Application.Tests.csproj|solutionrelative:tests\\eduapoyos.application.tests\\getsupportrequestbyidqueryhandlertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{07D2F389-91BA-69EF-9CC3-E1F050C10788}|tests\\EduApoyos.Application.Tests\\EduApoyos.Application.Tests.csproj|c:\\users\\asus\\desktop\\a3c\\code\\eduapoyos\\eduapoyosback\\tests\\eduapoyos.application.tests\\logincommandhandlertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{07D2F389-91BA-69EF-9CC3-E1F050C10788}|tests\\EduApoyos.Application.Tests\\EduApoyos.Application.Tests.csproj|solutionrelative:tests\\eduapoyos.application.tests\\logincommandhandlertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{07D2F389-91BA-69EF-9CC3-E1F050C10788}|tests\\EduApoyos.Application.Tests\\EduApoyos.Application.Tests.csproj|c:\\users\\asus\\desktop\\a3c\\code\\eduapoyos\\eduapoyosback\\tests\\eduapoyos.application.tests\\updatestatuscommandhandlertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{07D2F389-91BA-69EF-9CC3-E1F050C10788}|tests\\EduApoyos.Application.Tests\\EduApoyos.Application.Tests.csproj|solutionrelative:tests\\eduapoyos.application.tests\\updatestatuscommandhandlertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{07D2F389-91BA-69EF-9CC3-E1F050C10788}|tests\\EduApoyos.Application.Tests\\EduApoyos.Application.Tests.csproj|c:\\users\\asus\\desktop\\a3c\\code\\eduapoyos\\eduapoyosback\\tests\\eduapoyos.application.tests\\createsupportrequestcommandhandlertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{07D2F389-91BA-69EF-9CC3-E1F050C10788}|tests\\EduApoyos.Application.Tests\\EduApoyos.Application.Tests.csproj|solutionrelative:tests\\eduapoyos.application.tests\\createsupportrequestcommandhandlertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{07D2F389-91BA-69EF-9CC3-E1F050C10788}|tests\\EduApoyos.Application.Tests\\EduApoyos.Application.Tests.csproj|c:\\users\\asus\\desktop\\a3c\\code\\eduapoyos\\eduapoyosback\\tests\\eduapoyos.application.tests\\testhelpers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{07D2F389-91BA-69EF-9CC3-E1F050C10788}|tests\\EduApoyos.Application.Tests\\EduApoyos.Application.Tests.csproj|solutionrelative:tests\\eduapoyos.application.tests\\testhelpers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{41041E2F-0B93-10FF-6FF9-D35532FAEF4A}|src\\EduApoyos.Infrastructure\\EduApoyos.Infrastructure.csproj|c:\\users\\asus\\desktop\\a3c\\code\\eduapoyos\\eduapoyosback\\src\\eduapoyos.infrastructure\\persistence\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{41041E2F-0B93-10FF-6FF9-D35532FAEF4A}|src\\EduApoyos.Infrastructure\\EduApoyos.Infrastructure.csproj|solutionrelative:src\\eduapoyos.infrastructure\\persistence\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -73,10 +109,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{41041E2F-0B93-10FF-6FF9-D35532FAEF4A}|src\\EduApoyos.Infrastructure\\EduApoyos.Infrastructure.csproj|c:\\users\\asus\\desktop\\a3c\\code\\eduapoyos\\eduapoyosback\\src\\eduapoyos.infrastructure\\repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{41041E2F-0B93-10FF-6FF9-D35532FAEF4A}|src\\EduApoyos.Infrastructure\\EduApoyos.Infrastructure.csproj|solutionrelative:src\\eduapoyos.infrastructure\\repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41041E2F-0B93-10FF-6FF9-D35532FAEF4A}|src\\EduApoyos.Infrastructure\\EduApoyos.Infrastructure.csproj|c:\\users\\asus\\desktop\\a3c\\code\\eduapoyos\\eduapoyosback\\src\\eduapoyos.infrastructure\\persistence\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41041E2F-0B93-10FF-6FF9-D35532FAEF4A}|src\\EduApoyos.Infrastructure\\EduApoyos.Infrastructure.csproj|solutionrelative:src\\eduapoyos.infrastructure\\persistence\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -86,11 +118,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 21,
               "Title": "Dockerfile",
               "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\Dockerfile",
               "RelativeDocumentMoniker": "Dockerfile",
@@ -99,12 +131,128 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2026-07-25T20:56:42.338Z",
-              "IsPinned": true,
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DomainSupportRequestTests.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\tests\\EduApoyos.Application.Tests\\DomainSupportRequestTests.cs",
+              "RelativeDocumentMoniker": "tests\\EduApoyos.Application.Tests\\DomainSupportRequestTests.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\tests\\EduApoyos.Application.Tests\\DomainSupportRequestTests.cs",
+              "RelativeToolTip": "tests\\EduApoyos.Application.Tests\\DomainSupportRequestTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-25T22:27:42.16Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\src\\EduApoyos.Infrastructure\\Persistence\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "src\\EduApoyos.Infrastructure\\Persistence\\UnitOfWork.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\src\\EduApoyos.Infrastructure\\Persistence\\UnitOfWork.cs",
+              "RelativeToolTip": "src\\EduApoyos.Infrastructure\\Persistence\\UnitOfWork.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAkwA8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-25T20:50:40.079Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "GetSupportRequestsByStudentQueryHandlerTests.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\tests\\EduApoyos.Application.Tests\\GetSupportRequestsByStudentQueryHandlerTests.cs",
+              "RelativeDocumentMoniker": "tests\\EduApoyos.Application.Tests\\GetSupportRequestsByStudentQueryHandlerTests.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\tests\\EduApoyos.Application.Tests\\GetSupportRequestsByStudentQueryHandlerTests.cs",
+              "RelativeToolTip": "tests\\EduApoyos.Application.Tests\\GetSupportRequestsByStudentQueryHandlerTests.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAADwvzQAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-25T22:27:30.056Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GetSupportRequestByIdQueryHandlerTests.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\tests\\EduApoyos.Application.Tests\\GetSupportRequestByIdQueryHandlerTests.cs",
+              "RelativeDocumentMoniker": "tests\\EduApoyos.Application.Tests\\GetSupportRequestByIdQueryHandlerTests.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\tests\\EduApoyos.Application.Tests\\GetSupportRequestByIdQueryHandlerTests.cs",
+              "RelativeToolTip": "tests\\EduApoyos.Application.Tests\\GetSupportRequestByIdQueryHandlerTests.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAwwDwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-25T22:27:16.328Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "README.md",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\README.md",
+              "RelativeDocumentMoniker": "README.md",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\README.md",
+              "RelativeToolTip": "README.md",
+              "ViewState": "AgIAADcCAAAAAAAAAAAgwFwCAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-07-25T22:23:46.611Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LoginCommandHandlerTests.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\tests\\EduApoyos.Application.Tests\\LoginCommandHandlerTests.cs",
+              "RelativeDocumentMoniker": "tests\\EduApoyos.Application.Tests\\LoginCommandHandlerTests.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\tests\\EduApoyos.Application.Tests\\LoginCommandHandlerTests.cs",
+              "RelativeToolTip": "tests\\EduApoyos.Application.Tests\\LoginCommandHandlerTests.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAwwDMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-25T22:27:00.004Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UpdateStatusCommandHandlerTests.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\tests\\EduApoyos.Application.Tests\\UpdateStatusCommandHandlerTests.cs",
+              "RelativeDocumentMoniker": "tests\\EduApoyos.Application.Tests\\UpdateStatusCommandHandlerTests.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\tests\\EduApoyos.Application.Tests\\UpdateStatusCommandHandlerTests.cs",
+              "RelativeToolTip": "tests\\EduApoyos.Application.Tests\\UpdateStatusCommandHandlerTests.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAwwDMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-25T22:26:46.904Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CreateSupportRequestCommandHandlerTests.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\tests\\EduApoyos.Application.Tests\\CreateSupportRequestCommandHandlerTests.cs",
+              "RelativeDocumentMoniker": "tests\\EduApoyos.Application.Tests\\CreateSupportRequestCommandHandlerTests.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\tests\\EduApoyos.Application.Tests\\CreateSupportRequestCommandHandlerTests.cs",
+              "RelativeToolTip": "tests\\EduApoyos.Application.Tests\\CreateSupportRequestCommandHandlerTests.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAwwEcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-25T22:26:31.573Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "TestHelpers.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\tests\\EduApoyos.Application.Tests\\TestHelpers.cs",
+              "RelativeDocumentMoniker": "tests\\EduApoyos.Application.Tests\\TestHelpers.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\tests\\EduApoyos.Application.Tests\\TestHelpers.cs",
+              "RelativeToolTip": "tests\\EduApoyos.Application.Tests\\TestHelpers.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAwwCcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-25T22:26:16.519Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "ISupportRequestRepository.cs",
               "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\src\\EduApoyos.Domain\\Interfaces\\ISupportRequestRepository.cs",
               "RelativeDocumentMoniker": "src\\EduApoyos.Domain\\Interfaces\\ISupportRequestRepository.cs",
@@ -112,12 +260,11 @@
               "RelativeToolTip": "src\\EduApoyos.Domain\\Interfaces\\ISupportRequestRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-25T22:09:08.23Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-25T22:09:08.23Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 11,
               "Title": "SupportRequestRepository.cs",
               "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\src\\EduApoyos.Infrastructure\\Repositories\\SupportRequestRepository.cs",
               "RelativeDocumentMoniker": "src\\EduApoyos.Infrastructure\\Repositories\\SupportRequestRepository.cs",
@@ -125,12 +272,11 @@
               "RelativeToolTip": "src\\EduApoyos.Infrastructure\\Repositories\\SupportRequestRepository.cs",
               "ViewState": "AgIAADQAAAAAAAAAAADwv1kAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-25T20:51:07.699Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-25T20:51:07.699Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 10,
               "Title": "UpdateStatusCommandHandler.cs",
               "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\src\\EduApoyos.Application\\Features\\SupportRequests\\Commands\\UpdateStatusCommandHandler.cs",
               "RelativeDocumentMoniker": "src\\EduApoyos.Application\\Features\\SupportRequests\\Commands\\UpdateStatusCommandHandler.cs",
@@ -138,25 +284,24 @@
               "RelativeToolTip": "src\\EduApoyos.Application\\Features\\SupportRequests\\Commands\\UpdateStatusCommandHandler.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAwwDUAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-25T21:54:18.856Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-25T21:54:18.856Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 9,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\src\\EduApoyos.Infrastructure\\Persistence\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "src\\EduApoyos.Infrastructure\\Persistence\\ApplicationDbContext.cs",
               "ToolTip": "C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\src\\EduApoyos.Infrastructure\\Persistence\\ApplicationDbContext.cs",
               "RelativeToolTip": "src\\EduApoyos.Infrastructure\\Persistence\\ApplicationDbContext.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAwwDUAAABJAAAAAAAAAA==",
+              "ViewState": "AgIAACYAAAAAAAAAAAAswDUAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-25T20:50:23.209Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 13,
               "Title": "SupportRequestsController.cs",
               "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\src\\EduApoyos.API\\Controllers\\SupportRequestsController.cs",
               "RelativeDocumentMoniker": "src\\EduApoyos.API\\Controllers\\SupportRequestsController.cs",
@@ -164,12 +309,11 @@
               "RelativeToolTip": "src\\EduApoyos.API\\Controllers\\SupportRequestsController.cs",
               "ViewState": "AgIAACMAAAAAAAAAAAAiwDAAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-25T20:55:50.021Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-25T20:55:50.021Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 16,
               "Title": "docker-compose.yml",
               "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\docker-compose.yml",
               "RelativeDocumentMoniker": "docker-compose.yml",
@@ -177,12 +321,11 @@
               "RelativeToolTip": "docker-compose.yml",
               "ViewState": "AgIAAAMAAAAAAAAAAAAqwBIAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2026-07-25T20:56:54.652Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-25T20:56:54.652Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 15,
               "Title": "IdentityService.cs",
               "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\src\\EduApoyos.Infrastructure\\Services\\IdentityService.cs",
               "RelativeDocumentMoniker": "src\\EduApoyos.Infrastructure\\Services\\IdentityService.cs",
@@ -190,12 +333,11 @@
               "RelativeToolTip": "src\\EduApoyos.Infrastructure\\Services\\IdentityService.cs",
               "ViewState": "AgIAAC8AAAAAAAAAAAA3wAMAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-25T20:51:56.401Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-25T20:51:56.401Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 14,
               "Title": "JwtTokenService.cs",
               "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\src\\EduApoyos.Infrastructure\\Services\\JwtTokenService.cs",
               "RelativeDocumentMoniker": "src\\EduApoyos.Infrastructure\\Services\\JwtTokenService.cs",
@@ -203,24 +345,22 @@
               "RelativeToolTip": "src\\EduApoyos.Infrastructure\\Services\\JwtTokenService.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAAIwDUAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-25T20:51:38.309Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-25T20:51:38.309Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 20,
               "Title": "EduApoyos.API",
               "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\src\\EduApoyos.API\\EduApoyos.API.csproj",
               "RelativeDocumentMoniker": "src\\EduApoyos.API\\EduApoyos.API.csproj",
               "ToolTip": "C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\src\\EduApoyos.API\\EduApoyos.API.csproj",
               "RelativeToolTip": "src\\EduApoyos.API\\EduApoyos.API.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-07-25T21:04:19.244Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-25T21:04:19.244Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 17,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\src\\EduApoyos.API\\appsettings.json",
               "RelativeDocumentMoniker": "src\\EduApoyos.API\\appsettings.json",
@@ -228,12 +368,11 @@
               "RelativeToolTip": "src\\EduApoyos.API\\appsettings.json",
               "ViewState": "AgIAAAIAAAAAAAAAAAAkwBEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-07-25T20:53:54.031Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-25T20:53:54.031Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 19,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\src\\EduApoyos.API\\Program.cs",
               "RelativeDocumentMoniker": "src\\EduApoyos.API\\Program.cs",
@@ -241,12 +380,11 @@
               "RelativeToolTip": "src\\EduApoyos.API\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAGUAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-25T20:53:39.611Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-25T20:53:39.611Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 18,
               "Title": "StudentsController.cs",
               "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\src\\EduApoyos.API\\Controllers\\StudentsController.cs",
               "RelativeDocumentMoniker": "src\\EduApoyos.API\\Controllers\\StudentsController.cs",
@@ -254,12 +392,11 @@
               "RelativeToolTip": "src\\EduApoyos.API\\Controllers\\StudentsController.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAiwBMAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-25T20:54:43.241Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-25T20:54:43.241Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 22,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\src\\EduApoyos.API\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "src\\EduApoyos.API\\Controllers\\AuthController.cs",
@@ -267,12 +404,11 @@
               "RelativeToolTip": "src\\EduApoyos.API\\Controllers\\AuthController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-25T20:54:22.538Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-25T20:54:22.538Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 23,
               "Title": "DependencyInjection.cs",
               "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\src\\EduApoyos.Infrastructure\\DependencyInjection.cs",
               "RelativeDocumentMoniker": "src\\EduApoyos.Infrastructure\\DependencyInjection.cs",
@@ -280,12 +416,11 @@
               "RelativeToolTip": "src\\EduApoyos.Infrastructure\\DependencyInjection.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-25T20:53:03.515Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-25T20:53:03.515Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 24,
               "Title": "DataSeeder.cs",
               "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\src\\EduApoyos.Infrastructure\\Persistence\\DataSeeder.cs",
               "RelativeDocumentMoniker": "src\\EduApoyos.Infrastructure\\Persistence\\DataSeeder.cs",
@@ -293,12 +428,11 @@
               "RelativeToolTip": "src\\EduApoyos.Infrastructure\\Persistence\\DataSeeder.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-25T20:52:12.735Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-25T20:52:12.735Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 25,
               "Title": "StudentRepository.cs",
               "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\src\\EduApoyos.Infrastructure\\Repositories\\StudentRepository.cs",
               "RelativeDocumentMoniker": "src\\EduApoyos.Infrastructure\\Repositories\\StudentRepository.cs",
@@ -306,12 +440,11 @@
               "RelativeToolTip": "src\\EduApoyos.Infrastructure\\Repositories\\StudentRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-25T20:51:21.226Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-25T20:51:21.226Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 26,
               "Title": "Repository.cs",
               "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\src\\EduApoyos.Infrastructure\\Repositories\\Repository.cs",
               "RelativeDocumentMoniker": "src\\EduApoyos.Infrastructure\\Repositories\\Repository.cs",
@@ -319,21 +452,7 @@
               "RelativeToolTip": "src\\EduApoyos.Infrastructure\\Repositories\\Repository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-25T20:50:53.502Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "UnitOfWork.cs",
-              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\src\\EduApoyos.Infrastructure\\Persistence\\UnitOfWork.cs",
-              "RelativeDocumentMoniker": "src\\EduApoyos.Infrastructure\\Persistence\\UnitOfWork.cs",
-              "ToolTip": "C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\src\\EduApoyos.Infrastructure\\Persistence\\UnitOfWork.cs",
-              "RelativeToolTip": "src\\EduApoyos.Infrastructure\\Persistence\\UnitOfWork.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-25T20:50:40.079Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-25T20:50:53.502Z"
             }
           ]
         }

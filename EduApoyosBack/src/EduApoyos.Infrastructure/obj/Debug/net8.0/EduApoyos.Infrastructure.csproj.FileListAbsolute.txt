@@ -17,3 +17,4 @@ C:\Users\Asus\Desktop\A3C\Code\EduApoyos\EduApoyosBack\src\EduApoyos.Infrastruct
 C:\Users\Asus\Desktop\A3C\Code\EduApoyos\EduApoyosBack\src\EduApoyos.Infrastructure\obj\Debug\net8.0\EduApoyos.Infrastructure.pdb
 C:\Users\Asus\Desktop\A3C\Code\EduApoyos\EduApoyosBack\src\EduApoyos.Infrastructure\obj\Debug\net8.0\EduApoyos.Infrastructure.genruntimeconfig.cache
 C:\Users\Asus\Desktop\A3C\Code\EduApoyos\EduApoyosBack\src\EduApoyos.Infrastructure\obj\Debug\net8.0\ref\EduApoyos.Infrastructure.dll
+C:\Users\Asus\Desktop\A3C\Code\EduApoyos\EduApoyosBack\src\EduApoyos.Infrastructure\obj\Debug\net8.0\EduApoyos.Infrastructure.sourcelink.json

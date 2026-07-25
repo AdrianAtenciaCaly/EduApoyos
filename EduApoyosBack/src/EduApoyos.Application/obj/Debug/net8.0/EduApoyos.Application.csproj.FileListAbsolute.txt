@@ -13,3 +13,4 @@ C:\Users\Asus\Desktop\A3C\Code\EduApoyos\EduApoyosBack\src\EduApoyos.Application
 C:\Users\Asus\Desktop\A3C\Code\EduApoyos\EduApoyosBack\src\EduApoyos.Application\obj\Debug\net8.0\refint\EduApoyos.Application.dll
 C:\Users\Asus\Desktop\A3C\Code\EduApoyos\EduApoyosBack\src\EduApoyos.Application\obj\Debug\net8.0\EduApoyos.Application.pdb
 C:\Users\Asus\Desktop\A3C\Code\EduApoyos\EduApoyosBack\src\EduApoyos.Application\obj\Debug\net8.0\ref\EduApoyos.Application.dll
+C:\Users\Asus\Desktop\A3C\Code\EduApoyos\EduApoyosBack\src\EduApoyos.Application\obj\Debug\net8.0\EduApoyos.Application.sourcelink.json
