@@ -242,7 +242,7 @@ dotnet test --filter "FullyQualifiedName~CreateSupportRequest"
 
 ---
 
-## 10. SQL scripts (requirement §4.2)
+## 10. SQL scripts (requirement 4.2)
 
 | File | Purpose |
 |------|---------|
@@ -263,46 +263,43 @@ EF also creates `IX_SupportRequests_Status_UpdatedAt` in `OnModelCreating`.
 
 ---
 
-## 12. Azure services (documented — deploy not required)
+## 12. Azure (minimum documented — requirement 8.3)
 
-| Service | Why |
-|---------|-----|
-| Azure App Service | Host the API |
-| Azure SQL Database | Managed SQL database |
-| Azure Key Vault | JWT key + connection string |
-| Azure Blob Storage | Optional documents/PDFs (RF-04) |
+| Service | Justification |
+|---------|----------------|
+| **Azure App Service** | Hosts the .NET 8 Web API (and optionally the Angular SPA as static files or a second App Service). **Tier:** *Basic (B1)* for demos and low traffic (shared compute is enough for evaluation); *Standard (S1)* for production with slot swaps, auto-scale rules, and custom domains. **Basic config:** runtime stack `.NET 8`, HTTPS only, app settings for `ConnectionStrings__DefaultConnection` and `Jwt__*` (or Key Vault references), CORS origins limited to the frontend URL. |
+| **Azure SQL Database** | Relational store for users, students, support requests and status history (EF Core). **Tier:** *Basic* (5 DTUs) for local-like / demo load (few concurrent users, seed + manual testing); *Standard S0–S2* when listing with filters/pagination and concurrent advisors grow. Firewall rules restrict access to App Service outbound IPs (or private endpoint). Connection string stored in Key Vault / App Settings, never in source. |
+| **Azure Blob Storage** | Used **if** RF-04 document/PDF constancy upload is implemented: store generated PDF constancies or uploaded supporting files per request. Containers with private access; SAS or managed identity from App Service. *Not required if the constancy feature is deferred.* |
+| **Azure Key Vault** | Production secrets: SQL connection string, JWT signing key, and any storage keys. App Service uses a **managed identity** with get permission on secrets; configuration uses Key Vault references so secrets are never committed to Git. |
+
+Optional (recommended, not mandatory in the test doc): **Application Insights** for latency (NFR &lt; 800 ms) and failure tracking.
+
+---
+
+
+## 13. CI pipeline (requirement 8.2)
+
+File: `.github/workflows/ci.yml` (GitHub Actions; equivalent steps work in Azure DevOps).
+
+The pipeline is **documented and present in the repo**. It does not need to run on a private agent to meet the requirement.
+
+| Step | Command |
+|------|---------|
+| 1. Restore dependencies | `dotnet restore` |
+| 2. Build Release | `dotnet build --configuration Release` |
+| 3. Unit tests | `dotnet test` |
+| 4. Publish API artifact | `dotnet publish` → artifact `eduapoyos-api` |
+
+Triggers: `push` / `pull_request` on `main` (and `develop`).
 
 ---
 
-## 13. CI/CD
-
-`.github/workflows/ci.yml`: restore → build Release → **test** → publish API.
-
----
 
 ## 14. Decisions & next steps
 
 **Decisions:** Clean Architecture, English naming, MediatR CQRS, Repository + UoW, careful status updates to avoid EF concurrency issues, seed on startup.
 
 **With more time:** ProblemDetails middleware, more FluentValidation, integration tests (`WebApplicationFactory`), `GET /api/students/me/support-requests`, PDF constancy.
-
----
-
-## 15. Evaluator checklist
-
-- [x] Clean Architecture
-- [x] JWT + Identity + roles
-- [x] Resource authorization for students
-- [x] Status flow + history
-- [x] Pagination and filters
-- [x] EF Core + SQL Server
-- [x] SQL scripts + non-clustered index
-- [x] Seed data
-- [x] Swagger + Bearer
-- [x] Docker Compose
-- [x] Unit tests (Application)
-- [x] CI YAML
-- [x] Azure documented
 
 ---
 
@@ -537,7 +534,7 @@ dotnet test --filter "FullyQualifiedName~CreateSupportRequest"
 
 ---
 
-## 10. Scripts SQL (requisito §4.2)
+## 10. Scripts SQL (requisito 4.2)
 
 | Archivo | Propósito |
 |---------|-----------|
@@ -558,20 +555,37 @@ EF también crea `IX_SupportRequests_Status_UpdatedAt` en `OnModelCreating`.
 
 ---
 
-## 12. Servicios Azure (documentados — no se exige despliegue)
+## 12. Azure (mínimo documentado — requisito 8.3)
 
 | Servicio | Justificación |
 |----------|----------------|
-| Azure App Service | Hospedar la API |
-| Azure SQL Database | Base de datos relacional administrada |
-| Azure Key Vault | Clave JWT + cadena de conexión |
-| Azure Blob Storage | Opcional para documentos/PDF (RF-04) |
+| **Azure App Service** | Hospeda la Web API .NET 8 (y opcionalmente el SPA Angular como estáticos o un segundo App Service). **Tier:** *Basic (B1)* para demos y bajo tráfico; *Standard (S1)* para producción (slots, autoescalado, dominio personalizado). **Configuración básica:** runtime `.NET 8`, solo HTTPS, app settings para `ConnectionStrings__DefaultConnection` y `Jwt__*` (o referencias a Key Vault), CORS limitado a la URL del frontend. |
+| **Azure SQL Database** | Base relacional para usuarios, estudiantes, solicitudes e historial de estados (EF Core). **Tier:** *Basic* (5 DTUs) para carga de demo / pocas pruebas concurrentes; *Standard S0–S2* cuando crecen listados filtrados y asesores concurrentes. Firewall hacia IPs de salida del App Service (o private endpoint). Cadena de conexión en Key Vault / App Settings, nunca en el código. |
+| **Azure Blob Storage** | Se usaría **si** se implementa la carga/generación de documentos o constancias PDF de RF-04: contenedores privados; acceso con SAS o identidad administrada desde App Service. *No obligatorio si la constancia queda pendiente.* |
+| **Azure Key Vault** | Secretos de producción: connection string de SQL, clave de firma JWT y claves de storage. El App Service usa **managed identity** con permiso de lectura de secretos; configuración con referencias a Key Vault para no versionar secretos en Git. |
+
+Opcional (recomendado, no exigido en el documento): **Application Insights** para latencia (NFR &lt; 800 ms) y fallos.
 
 ---
 
-## 13. CI/CD
 
-`.github/workflows/ci.yml`: restore → build Release → **test** → publish de la API.
+## 13. Pipeline CI (requisito 8.2)
+
+Archivo: `.github/workflows/ci.yml` (GitHub Actions; los mismos pasos aplican en Azure DevOps).
+
+El pipeline está **documentado y presente en el repositorio**. No es obligatorio ejecutarlo en un agente propio para cumplir el requisito.
+
+| Paso | Comando |
+|------|---------|
+| 1. Restaurar dependencias | `dotnet restore` |
+| 2. Compilar Release | `dotnet build --configuration Release` |
+| 3. Pruebas unitarias | `dotnet test` |
+| 4. Publicar artefacto de la API | `dotnet publish` → artefacto `eduapoyos-api` |
+
+Disparadores: `push` / `pull_request` sobre `main` (y `develop`).
+
+---
+
 
 ---
 
@@ -580,24 +594,6 @@ EF también crea `IX_SupportRequests_Status_UpdatedAt` en `OnModelCreating`.
 **Decisiones:** Clean Architecture, nombres en inglés, CQRS con MediatR, Repository + UoW, actualización de estados evitando concurrencia de EF, seed al arrancar.
 
 **Con más tiempo:** middleware ProblemDetails, más FluentValidation, tests de integración (`WebApplicationFactory`), endpoint `GET /api/students/me/support-requests`, constancia PDF.
-
----
-
-## 15. Checklist del evaluador
-
-- [x] Clean Architecture
-- [x] JWT + Identity + roles
-- [x] Autorización por recurso (estudiante)
-- [x] Flujo de estados + historial
-- [x] Paginación y filtros
-- [x] EF Core + SQL Server
-- [x] Scripts SQL + índice no agrupado
-- [x] Datos seed
-- [x] Swagger + Bearer
-- [x] Docker Compose
-- [x] Pruebas unitarias (Application)
-- [x] YAML de CI
-- [x] Azure documentado
 
 ---
 
