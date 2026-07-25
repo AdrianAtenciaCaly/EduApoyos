@@ -1,0 +1,15 @@
+C:\Users\Asus\Desktop\A3C\Code\EduApoyos\EduApoyosBack\src\EduApoyos.Application\bin\Debug\net8.0\EduApoyos.Application.deps.json
+C:\Users\Asus\Desktop\A3C\Code\EduApoyos\EduApoyosBack\src\EduApoyos.Application\bin\Debug\net8.0\EduApoyos.Application.dll
+C:\Users\Asus\Desktop\A3C\Code\EduApoyos\EduApoyosBack\src\EduApoyos.Application\bin\Debug\net8.0\EduApoyos.Application.pdb
+C:\Users\Asus\Desktop\A3C\Code\EduApoyos\EduApoyosBack\src\EduApoyos.Application\bin\Debug\net8.0\EduApoyos.Domain.dll
+C:\Users\Asus\Desktop\A3C\Code\EduApoyos\EduApoyosBack\src\EduApoyos.Application\bin\Debug\net8.0\EduApoyos.Domain.pdb
+C:\Users\Asus\Desktop\A3C\Code\EduApoyos\EduApoyosBack\src\EduApoyos.Application\obj\Debug\net8.0\EduApoyos.Application.csproj.AssemblyReference.cache
+C:\Users\Asus\Desktop\A3C\Code\EduApoyos\EduApoyosBack\src\EduApoyos.Application\obj\Debug\net8.0\EduApoyos.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Asus\Desktop\A3C\Code\EduApoyos\EduApoyosBack\src\EduApoyos.Application\obj\Debug\net8.0\EduApoyos.Application.AssemblyInfoInputs.cache
+C:\Users\Asus\Desktop\A3C\Code\EduApoyos\EduApoyosBack\src\EduApoyos.Application\obj\Debug\net8.0\EduApoyos.Application.AssemblyInfo.cs
+C:\Users\Asus\Desktop\A3C\Code\EduApoyos\EduApoyosBack\src\EduApoyos.Application\obj\Debug\net8.0\EduApoyos.Application.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Desktop\A3C\Code\EduApoyos\EduApoyosBack\src\EduApoyos.Application\obj\Debug\net8.0\EduApoyo.61651A66.Up2Date
+C:\Users\Asus\Desktop\A3C\Code\EduApoyos\EduApoyosBack\src\EduApoyos.Application\obj\Debug\net8.0\EduApoyos.Application.dll
+C:\Users\Asus\Desktop\A3C\Code\EduApoyos\EduApoyosBack\src\EduApoyos.Application\obj\Debug\net8.0\refint\EduApoyos.Application.dll
+C:\Users\Asus\Desktop\A3C\Code\EduApoyos\EduApoyosBack\src\EduApoyos.Application\obj\Debug\net8.0\EduApoyos.Application.pdb
+C:\Users\Asus\Desktop\A3C\Code\EduApoyos\EduApoyosBack\src\EduApoyos.Application\obj\Debug\net8.0\ref\EduApoyos.Application.dll

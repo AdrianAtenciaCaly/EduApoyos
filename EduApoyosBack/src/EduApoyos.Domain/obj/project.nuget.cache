@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "PE8Rc19ahwo=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Asus\\Desktop\\A3C\\Code\\EduApoyos\\EduApoyosBack\\src\\EduApoyos.Domain\\EduApoyos.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Asus\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.29\\microsoft.windowsdesktop.app.ref.8.0.29.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.29\\microsoft.netcore.app.ref.8.0.29.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.29\\microsoft.aspnetcore.app.ref.8.0.29.nupkg.sha512"
+  ],
+  "logs": []
+}

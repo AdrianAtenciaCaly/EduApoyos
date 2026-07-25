@@ -1,0 +1,19 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: eduapoyos-api
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:8080
+
+      ConnectionStrings__DefaultConnection: "Server=host.docker.internal;Database=EduApoyosDb;Integrated Security=True;TrustServerCertificate=True;MultipleActiveResultSets=True"
+
+      Jwt__Key: "ThisIsAVeryLongSecretKeyForJwtTokenGenerationEduApoyos2025!@#SecureKey"
+      Jwt__Issuer: "EduApoyos"
+      Jwt__Audience: "EduApoyosUsers"
+      Jwt__ExpirationHours: "8"
+
+    ports:
+      - "8080:8080"
