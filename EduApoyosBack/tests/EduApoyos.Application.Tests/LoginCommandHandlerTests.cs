@@ -4,11 +4,6 @@ using EduApoyos.Application.Interfaces;
 using EduApoyos.Domain.Entities;
 using FluentAssertions;
 using Moq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EduApoyos.Application.Tests
 {

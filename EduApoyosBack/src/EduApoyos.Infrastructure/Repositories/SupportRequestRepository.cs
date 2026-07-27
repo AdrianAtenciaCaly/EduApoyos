@@ -2,11 +2,6 @@
 using EduApoyos.Domain.Interfaces;
 using EduApoyos.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EduApoyos.Infrastructure.Repositories
 {
