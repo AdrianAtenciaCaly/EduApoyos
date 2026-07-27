@@ -12,8 +12,6 @@ SPA Angular 17 para la gestión de solicitudes de apoyo económico (becas, créd
 
 ---
 
-# English
-
 ## 1. Description
 
 EduApoyos Frontend is a single-page application that consumes the EduApoyos REST API:
@@ -204,8 +202,6 @@ Artifacts under `dist/EduApoyosFront/`.
 - Observation is **required** when changing status.
 - Material select overlays: ensure `.cdk-overlay-container { z-index: 2000; }` if dialogs cover the panel.
 ---
-
-# Español
 
 ## 1. Descripción
 
