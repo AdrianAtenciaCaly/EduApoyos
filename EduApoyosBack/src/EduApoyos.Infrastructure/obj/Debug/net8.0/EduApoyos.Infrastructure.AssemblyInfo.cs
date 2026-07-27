@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EduApoyos.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eafb9694852cdedd8c6b37644c7d82c926c99790")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c338bf65e671d302283f2e8feab236979886dccb")]
 [assembly: System.Reflection.AssemblyProductAttribute("EduApoyos.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EduApoyos.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
