@@ -1,0 +1,186 @@
+<div class="page-header">
+    <div class="header-content">
+        <button mat-button type="button" routerLink="/support-requests" class="back-btn">
+            <span class="material-icons">
+                arrow_back
+            </span>
+
+            <span>
+                Volver a solicitudes
+            </span>
+        </button>
+
+        <div class="title-section">
+            <div class="title-icon">
+                <span class="material-icons">
+                    request_quote
+                </span>
+            </div>
+
+            <div>
+                <h1 class="page-title">
+                    Nueva Solicitud de Apoyo
+                </h1>
+
+                <p class="page-subtitle">
+                    Registra una nueva solicitud de apoyo económico para un estudiante.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<mat-card class="form-card">
+    <div class="form-header">
+        <h2>
+            Información de la solicitud
+        </h2>
+
+        <p>
+            Completa los siguientes datos para registrar la solicitud.
+        </p>
+    </div>
+
+    <form [formGroup]="form" (ngSubmit)="submit()" class="request-form">
+        <div class="form-grid">
+
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>
+                    Estudiante
+                </mat-label>
+
+                <mat-select formControlName="studentId" panelClass="support-select-panel">
+                    <mat-option value="" disabled>
+                        Selecciona un estudiante
+                    </mat-option>
+
+                    @for (s of students; track s.id) {
+                    <mat-option [value]="s.id">
+                        <span class="student-option">
+                            <span class="student-option-name">
+                                {{ s.fullName }}
+                            </span>
+
+                            <span class="student-option-email">
+                                {{ s.email }}
+                            </span>
+                        </span>
+                    </mat-option>
+                    }
+                </mat-select>
+
+                @if (
+                form.controls.studentId.invalid &&
+                form.controls.studentId.touched
+                ) {
+                <mat-error>
+                    Debes seleccionar un estudiante.
+                </mat-error>
+                }
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>
+                    Tipo de apoyo
+                </mat-label>
+
+                <mat-select formControlName="type" panelClass="support-select-panel">
+                    <mat-option value="Scholarship">
+                        Beca
+                    </mat-option>
+
+                    <mat-option value="Credit">
+                        Crédito
+                    </mat-option>
+
+                    <mat-option value="Subsidy">
+                        Subsidio
+                    </mat-option>
+                </mat-select>
+
+                @if (
+                form.controls.type.invalid &&
+                form.controls.type.touched
+                ) {
+                <mat-error>
+                    Debes seleccionar un tipo de apoyo.
+                </mat-error>
+                }
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>
+                    Monto solicitado
+                </mat-label>
+
+                <span matTextPrefix class="currency-prefix">
+                    $
+                </span>
+
+                <input matInput type="number" formControlName="requestedAmount" placeholder="Ej. 1500000" min="1" />
+
+                @if (
+                form.controls.requestedAmount.invalid &&
+                form.controls.requestedAmount.touched
+                ) {
+                <mat-error>
+                    Ingresa un monto válido mayor a cero.
+                </mat-error>
+                }
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="full-width description-field">
+                <mat-label>
+                    Descripción
+                </mat-label>
+
+                <textarea matInput formControlName="description" rows="5" maxlength="500"
+                    placeholder="Describe el motivo de la solicitud de apoyo..."></textarea>
+
+                <mat-hint align="end">
+                    {{ form.controls.description.value.length }}/500
+                </mat-hint>
+
+                @if (
+                form.controls.description.invalid &&
+                form.controls.description.touched
+                ) {
+                <mat-error>
+                    La descripción es obligatoria y no debe superar los 500 caracteres.
+                </mat-error>
+                }
+            </mat-form-field>
+
+        </div>
+
+        @if (error) {
+        <div class="feedback-message error">
+            <span class="material-icons">
+                error_outline
+            </span>
+
+            <span>
+                {{ error }}
+            </span>
+        </div>
+        }
+
+        <div class="form-actions">
+            <button mat-stroked-button type="button" routerLink="/support-requests" class="cancel-btn">
+                <span class="material-icons">
+                    close
+                </span>
+
+                Cancelar
+            </button>
+
+            <button mat-raised-button color="primary" type="submit" class="submit-btn" [disabled]="form.invalid">
+                <span class="material-icons">
+                    save
+                </span>
+
+                Crear solicitud
+            </button>
+        </div>
+    </form>
+</mat-card>

@@ -1,0 +1,303 @@
+<div class="dialog-container">
+
+    <div class="dialog-header">
+
+        <div class="dialog-icon">
+
+            <span class="material-icons">
+                person_add
+            </span>
+
+        </div>
+
+        <div class="dialog-header-content">
+
+            <h2 mat-dialog-title>
+                Registrar estudiante
+            </h2>
+
+            <p>
+                Completa la información personal y académica.
+            </p>
+
+        </div>
+
+        <button mat-icon-button type="button" class="close-button" aria-label="Cerrar modal" (click)="close()">
+
+            <span class="material-icons">
+                close
+            </span>
+
+        </button>
+
+    </div>
+
+    <mat-dialog-content>
+
+        <form [formGroup]="form" class="student-form">
+
+            <div class="section-title">
+
+                <span class="material-icons">
+                    person
+                </span>
+
+                <span>
+                    Información personal
+                </span>
+
+            </div>
+
+            <mat-form-field appearance="outline" class="full-width">
+
+                <mat-label>
+                    Nombre completo
+                </mat-label>
+
+                <input matInput type="text" formControlName="fullName" />
+
+                <mat-hint>
+                    Ej. Juan Pérez
+                </mat-hint>
+
+                @if (
+                form.controls.fullName.hasError('required')
+                && form.controls.fullName.touched
+                ) {
+
+                <mat-error>
+                    El nombre es obligatorio.
+                </mat-error>
+
+                }
+
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="full-width">
+
+                <mat-label>
+                    Correo electrónico
+                </mat-label>
+
+                <input matInput type="email" formControlName="email" />
+
+                <mat-hint>
+                    Ej. juancorreo.com
+                </mat-hint>
+
+                @if (
+                form.controls.email.hasError('required')
+                && form.controls.email.touched
+                ) {
+
+                <mat-error>
+                    El correo es obligatorio.
+                </mat-error>
+
+                }
+
+                @if (
+                form.controls.email.hasError('email')
+                && form.controls.email.touched
+                ) {
+
+                <mat-error>
+                    Ingresa un correo electrónico válido.
+                </mat-error>
+
+                }
+
+            </mat-form-field>
+
+            <div class="form-row">
+
+                <mat-form-field appearance="outline" class="document-type-field">
+
+                    <mat-label>
+                        Tipo de documento
+                    </mat-label>
+
+                    <mat-select formControlName="documentType">
+                        @for (d of documentTypes; track d.value) {
+                        <mat-option [value]="d.value">{{ d.label }}</mat-option>
+                        }
+                    </mat-select>
+
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+
+                    <mat-label>
+                        Número de documento
+                    </mat-label>
+
+                    <input matInput type="text" formControlName="documentNumber" />
+
+                    <mat-hint>
+                        Ej. 1020304050
+                    </mat-hint>
+
+                    @if (
+                    form.controls.documentNumber.hasError('required')
+                    && form.controls.documentNumber.touched
+                    ) {
+
+                    <mat-error>
+                        El número es obligatorio.
+                    </mat-error>
+
+                    }
+
+                </mat-form-field>
+
+            </div>
+
+            <div class="section-title section-spacing">
+
+                <span class="material-icons">
+                    school
+                </span>
+
+                <span>
+                    Información académica
+                </span>
+
+            </div>
+
+            <div class="form-row">
+
+                <mat-form-field appearance="outline" floatLabel="always">
+                    <mat-label>Programa académico</mat-label>
+                    <mat-select formControlName="academicProgram" panelClass="edu-select-panel">
+                        @for (p of academicPrograms; track p.value) {
+                        <mat-option [value]="p.value">{{ p.label }}</mat-option>
+                        }
+                    </mat-select>
+                    @if (
+                    form.controls.academicProgram.hasError('required') &&
+                    form.controls.academicProgram.touched
+                    ) {
+                    <mat-error>El programa es obligatorio.</mat-error>
+                    }
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+
+                    <mat-label>
+                        Semestre
+                    </mat-label>
+
+                    <input matInput type="number" formControlName="semester" min="1" max="20" />
+
+                    @if (
+                    form.controls.semester.hasError('required')
+                    && form.controls.semester.touched
+                    ) {
+
+                    <mat-error>
+                        El semestre es obligatorio.
+                    </mat-error>
+
+                    }
+
+                    @if (
+                    form.controls.semester.hasError('min')
+                    ) {
+
+                    <mat-error>
+                        El semestre debe ser mayor a 0.
+                    </mat-error>
+
+                    }
+
+                </mat-form-field>
+
+            </div>
+
+            <div class="section-title section-spacing">
+
+                <span class="material-icons">
+                    lock
+                </span>
+
+                <span>
+                    Acceso a la plataforma
+                </span>
+
+            </div>
+
+            <mat-form-field appearance="outline" class="full-width">
+
+                <mat-label>
+                    Contraseña inicial
+                </mat-label>
+
+                <input matInput [type]="
+                        hidePassword
+                            ? 'password'
+                            : 'text'
+                    " formControlName="password" />
+
+                <button mat-icon-button matSuffix type="button" class="password-toggle" [attr.aria-label]="
+                        hidePassword
+                            ? 'Mostrar contraseña'
+                            : 'Ocultar contraseña'
+                    " (click)="togglePassword()">
+
+                    <span class="material-icons">
+                        {{
+                        hidePassword
+                        ? 'visibility'
+                        : 'visibility_off'
+                        }}
+                    </span>
+
+                </button>
+
+                <mat-hint>
+                    El estudiante podrá cambiarla posteriormente.
+                </mat-hint>
+
+            </mat-form-field>
+
+            @if (error) {
+
+            <div class="feedback-message">
+
+                <span class="material-icons">
+                    error_outline
+                </span>
+
+                <span>
+                    {{ error }}
+                </span>
+
+            </div>
+
+            }
+
+        </form>
+
+    </mat-dialog-content>
+
+    <mat-dialog-actions align="end">
+
+        <button mat-button type="button" (click)="close()">
+            Cancelar
+        </button>
+
+        <button mat-raised-button color="primary" type="button" [disabled]="form.invalid" (click)="save()">
+
+            <span class="material-icons">
+                person_add
+            </span>
+
+            <span>
+                Registrar estudiante
+            </span>
+
+        </button>
+
+    </mat-dialog-actions>
+
+</div>

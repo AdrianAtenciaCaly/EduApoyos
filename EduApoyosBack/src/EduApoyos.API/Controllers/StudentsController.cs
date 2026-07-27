@@ -16,6 +16,14 @@ namespace EduApoyos.API.Controllers
         private readonly IMediator _mediator;
         public StudentsController(IMediator mediator) => _mediator = mediator;
 
+        [HttpGet("me")]
+        [Authorize(Roles = "Student")]
+        public async Task<IActionResult> GetMe(CancellationToken ct)
+        {
+            var userId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
+            return Ok(await _mediator.Send(new GetCurrentStudentQuery(userId), ct));
+        }
+
         [HttpGet]
         [Authorize(Roles = "Advisor")]
         public async Task<IActionResult> GetAll([FromQuery] int page = 1, [FromQuery] int pageSize = 10, CancellationToken ct = default)
@@ -36,5 +44,7 @@ namespace EduApoyos.API.Controllers
             var userId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
             return Ok(await _mediator.Send(new GetSupportRequestsByStudentQuery(id, userId), ct));
         }
+
+  
     }
 }
