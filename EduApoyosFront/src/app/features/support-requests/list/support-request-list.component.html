@@ -1,0 +1,276 @@
+<div class="page-header header-with-action">
+    <div>
+        <h1 class="page-title">Solicitudes de Apoyo</h1>
+        <p class="page-subtitle">
+            Visualiza y gestiona las solicitudes de apoyo económico presentadas por los estudiantes.
+        </p>
+    </div>
+
+    <a mat-raised-button color="primary" routerLink="/support-requests/new" class="action-btn">
+        <span class="material-icons btn-icon">add</span>
+        <span>Nueva Solicitud</span>
+    </a>
+</div>
+
+<mat-card class="filters-card">
+    <div class="filters-header">
+        <div class="filters-title">
+            <span class="material-icons">filter_alt</span>
+
+            <div>
+                <h3>Filtrar solicitudes</h3>
+                <p>Selecciona los criterios para consultar las solicitudes.</p>
+            </div>
+        </div>
+
+        @if (hasActiveFilters) {
+        <button mat-button type="button" class="clear-filters-btn" (click)="clearFilters()">
+            <span class="material-icons">filter_alt_off</span>
+            Limpiar filtros
+        </button>
+        }
+    </div>
+
+    <form [formGroup]="filters" (ngSubmit)="applyFilters()" class="filters-form">
+        <mat-form-field appearance="outline" class="filter-field">
+            <mat-label>Estado</mat-label>
+
+            <mat-select formControlName="status">
+                <mat-option value="">
+                    Todos los estados
+                </mat-option>
+
+                <mat-option value="Pending">
+                    Pendiente
+                </mat-option>
+
+                <mat-option value="UnderReview">
+                    En revisión
+                </mat-option>
+
+                <mat-option value="Approved">
+                    Aprobado
+                </mat-option>
+
+                <mat-option value="Rejected">
+                    Rechazado
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="filter-field">
+            <mat-label>Tipo de apoyo</mat-label>
+
+            <mat-select formControlName="type">
+                <mat-option value="">
+                    Todos los tipos
+                </mat-option>
+
+                <mat-option value="Scholarship">
+                    Beca
+                </mat-option>
+
+                <mat-option value="Credit">
+                    Crédito
+                </mat-option>
+
+                <mat-option value="Subsidy">
+                    Subsidio
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" class="filter-btn">
+            <span class="material-icons btn-icon">
+                search
+            </span>
+
+            <span>
+                Aplicar filtros
+            </span>
+        </button>
+    </form>
+
+    @if (hasActiveFilters) {
+    <div class="active-filters">
+        <div class="active-filters-header">
+            <span class="material-icons">
+                tune
+            </span>
+
+            <span>
+                Filtros aplicados
+            </span>
+        </div>
+
+        <div class="filter-tags">
+            @if (filters.controls.status.value) {
+            <div class="filter-tag">
+                <span class="filter-tag-label">
+                    Estado:
+                </span>
+
+                <span class="filter-tag-value">
+                    {{ getStatusLabel(filters.controls.status.value) }}
+                </span>
+
+                <button type="button" class="remove-filter" (click)="removeFilter('status')"
+                    aria-label="Eliminar filtro de estado">
+                    <span class="material-icons">
+                        close
+                    </span>
+                </button>
+            </div>
+            }
+
+            @if (filters.controls.type.value) {
+            <div class="filter-tag">
+                <span class="filter-tag-label">
+                    Tipo:
+                </span>
+
+                <span class="filter-tag-value">
+                    {{ getTypeLabel(filters.controls.type.value) }}
+                </span>
+
+                <button type="button" class="remove-filter" (click)="removeFilter('type')"
+                    aria-label="Eliminar filtro de tipo">
+                    <span class="material-icons">
+                        close
+                    </span>
+                </button>
+            </div>
+            }
+        </div>
+    </div>
+    }
+</mat-card>
+
+<mat-card class="table-card">
+    <div class="table-header">
+        <div>
+            <h2>Listado de solicitudes</h2>
+            <p>
+                @if (hasActiveFilters) {
+                Resultados según los filtros seleccionados.
+                } @else {
+                Todas las solicitudes registradas en el sistema.
+                }
+            </p>
+        </div>
+
+        @if (total > 0) {
+        <span class="results-count">
+            {{ total }} solicitudes
+        </span>
+        }
+    </div>
+
+    <div class="table-wrapper">
+        <table mat-table [dataSource]="items" class="full">
+            <ng-container matColumnDef="studentName">
+                <th mat-header-cell *matHeaderCellDef>
+                    Estudiante
+                </th>
+
+                <td mat-cell *matCellDef="let r">
+                    <div class="student-cell">
+                        <span class="avatar-sm">
+                            {{ r.studentName.charAt(0) }}
+                        </span>
+
+                        <span class="student-name">
+                            {{ r.studentName }}
+                        </span>
+                    </div>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="type">
+                <th mat-header-cell *matHeaderCellDef>
+                    Tipo
+                </th>
+
+                <td mat-cell *matCellDef="let r">
+                    <span class="type-tag">
+                        {{ getTypeLabel(r.type) }}
+                    </span>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="requestedAmount">
+                <th mat-header-cell *matHeaderCellDef>
+                    Monto solicitado
+                </th>
+
+                <td mat-cell *matCellDef="let r">
+                    <span class="amount-text">
+                        $ {{ r.requestedAmount | number }}
+                    </span>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="status">
+                <th mat-header-cell *matHeaderCellDef>
+                    Estado
+                </th>
+
+                <td mat-cell *matCellDef="let r">
+                    <span class="status-badge" [ngClass]="'status-' + r.status.toLowerCase()">
+                        {{ getStatusLabel(r.status) }}
+                    </span>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="createdAt">
+                <th mat-header-cell *matHeaderCellDef>
+                    Fecha creación
+                </th>
+
+                <td mat-cell *matCellDef="let r">
+                    <span class="date-text">
+                        {{ r.createdAt | date:'dd/MM/yyyy' }}
+                    </span>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef></th>
+
+                <td mat-cell *matCellDef="let r">
+                    <a mat-button color="primary" [routerLink]="['/support-requests', r.id]" class="detail-btn">
+                        Ver detalle
+                        <span class="material-icons">
+                            arrow_forward
+                        </span>
+                    </a>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="columns"></tr>
+
+            <tr mat-row *matRowDef="let row; columns: columns"></tr>
+
+            @if (items.length === 0) {
+            <tr class="empty-row">
+                <td [attr.colspan]="columns.length" class="empty-state">
+                    <span class="material-icons">
+                        inbox
+                    </span>
+
+                    <strong>
+                        No se encontraron solicitudes
+                    </strong>
+
+                    <span>
+                        Intenta cambiar los filtros seleccionados.
+                    </span>
+                </td>
+            </tr>
+            }
+        </table>
+    </div>
+
+    <mat-paginator [length]="total" [pageSize]="pageSize" [pageIndex]="page - 1" [pageSizeOptions]="[5, 10, 20]"
+        (page)="onPage($event)" />
+</mat-card>

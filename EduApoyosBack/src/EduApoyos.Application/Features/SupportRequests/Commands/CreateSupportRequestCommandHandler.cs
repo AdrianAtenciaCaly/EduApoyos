@@ -2,11 +2,6 @@
 using EduApoyos.Domain.Entities;
 using EduApoyos.Domain.Interfaces;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EduApoyos.Application.Features.SupportRequests.Commands
 {
@@ -16,10 +11,7 @@ namespace EduApoyos.Application.Features.SupportRequests.Commands
         private readonly IStudentRepository _studentRepository;
         private readonly IUnitOfWork _unitOfWork;
 
-        public CreateSupportRequestCommandHandler(
-            ISupportRequestRepository requestRepository,
-            IStudentRepository studentRepository,
-            IUnitOfWork unitOfWork)
+        public CreateSupportRequestCommandHandler( ISupportRequestRepository requestRepository,IStudentRepository studentRepository,IUnitOfWork unitOfWork)
         {
             _requestRepository = requestRepository;
             _studentRepository = studentRepository;
@@ -28,7 +20,16 @@ namespace EduApoyos.Application.Features.SupportRequests.Commands
 
         public async Task<SupportRequestDto> Handle(CreateSupportRequestCommand request, CancellationToken cancellationToken)
         {
-            var student = await _studentRepository.GetByIdWithUserAsync(request.Request.StudentId, cancellationToken)
+            Guid studentId = request.Request.StudentId;
+
+            if (request.CurrentUserRole.Equals("Student", StringComparison.OrdinalIgnoreCase))
+            {
+                var mine = await _studentRepository.GetByUserIdAsync(request.CurrentUserId, cancellationToken)
+                    ?? throw new UnauthorizedAccessException("No student profile found.");
+                studentId = mine.Id;
+            }
+
+            var student = await _studentRepository.GetByIdWithUserAsync(studentId, cancellationToken)
                 ?? throw new KeyNotFoundException("Student not found.");
 
             if (!Enum.TryParse<SupportType>(request.Request.Type, true, out var type))

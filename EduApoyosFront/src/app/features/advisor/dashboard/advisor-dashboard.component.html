@@ -1,0 +1,258 @@
+<div class="page-header">
+    <div class="header-content">
+
+        <div class="header-info">
+            <span class="eyebrow">
+                Gestión académica
+            </span>
+
+            <h1 class="page-title">
+                Estudiantes
+            </h1>
+
+            <p class="page-subtitle">
+                Administra y registra los estudiantes aptos para recibir apoyos económicos.
+            </p>
+        </div>
+
+        <button mat-raised-button color="primary" class="create-btn" type="button" (click)="openCreateModal()">
+            <span class="material-icons">
+                person_add
+            </span>
+
+            Registrar estudiante
+        </button>
+
+    </div>
+</div>
+
+@if (message) {
+<div class="feedback-message success">
+
+    <span class="material-icons">
+        check_circle_outline
+    </span>
+
+    <span>
+        {{ message }}
+    </span>
+
+    <button type="button" class="close-message" (click)="message = ''">
+        <span class="material-icons">
+            close
+        </span>
+    </button>
+
+</div>
+}
+
+@if (error) {
+<div class="feedback-message error">
+
+    <span class="material-icons">
+        error_outline
+    </span>
+
+    <span>
+        {{ error }}
+    </span>
+
+    <button type="button" class="close-message" (click)="error = ''">
+        <span class="material-icons">
+            close
+        </span>
+    </button>
+
+</div>
+}
+
+<div class="stats-grid">
+
+    <div class="stat-card">
+
+        <div class="stat-icon">
+            <span class="material-icons">
+                groups
+            </span>
+        </div>
+
+        <div class="stat-content">
+
+            <span class="stat-label">
+                Total estudiantes
+            </span>
+
+            <strong class="stat-value">
+                {{ total }}
+            </strong>
+
+        </div>
+
+    </div>
+
+</div>
+
+<mat-card class="table-card">
+
+    <mat-card-header>
+
+        <div class="table-header">
+
+            <div>
+                <mat-card-title>
+                    Listado de estudiantes
+                </mat-card-title>
+
+                <mat-card-subtitle>
+                    Consulta los estudiantes registrados en el sistema.
+                </mat-card-subtitle>
+            </div>
+
+            <div class="record-count">
+                {{ total }} registros
+            </div>
+
+        </div>
+
+    </mat-card-header>
+
+    <mat-card-content>
+
+        <div class="table-wrapper">
+
+            @if (items.length > 0) {
+
+            <table mat-table [dataSource]="items" class="student-table">
+
+                <ng-container matColumnDef="fullName">
+
+                    <th mat-header-cell *matHeaderCellDef>
+                        Estudiante
+                    </th>
+
+                    <td mat-cell *matCellDef="let student">
+
+                        <div class="student-name-cell">
+
+                            <span class="avatar">
+                                {{ getInitial(student.fullName) }}
+                            </span>
+
+                            <div class="student-detail">
+
+                                <span class="name-text">
+                                    {{ student.fullName }}
+                                </span>
+
+                                <span class="id-text">
+                                    ID: {{ student.id }}
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </td>
+
+                </ng-container>
+
+                <ng-container matColumnDef="email">
+
+                    <th mat-header-cell *matHeaderCellDef>
+                        Correo electrónico
+                    </th>
+
+                    <td mat-cell *matCellDef="let student">
+                        {{ student.email }}
+                    </td>
+
+                </ng-container>
+
+                <ng-container matColumnDef="documentNumber">
+
+                    <th mat-header-cell *matHeaderCellDef>
+                        Documento
+                    </th>
+
+                    <td mat-cell *matCellDef="let student">
+                        <span class="doc-badge">
+                            {{ student.documentType }}
+                            {{ student.documentNumber }}
+                        </span>
+                    </td>
+
+                </ng-container>
+
+                <ng-container matColumnDef="academicProgram">
+
+                    <th mat-header-cell *matHeaderCellDef>
+                        Programa académico
+                    </th>
+
+                    <td mat-cell *matCellDef="let student">
+                        {{ student.academicProgram }}
+                    </td>
+
+                </ng-container>
+
+                <ng-container matColumnDef="semester">
+
+                    <th mat-header-cell *matHeaderCellDef>
+                        Semestre
+                    </th>
+
+                    <td mat-cell *matCellDef="let student">
+                        <span class="semester-badge">
+                            Sem. {{ student.semester }}
+                        </span>
+                    </td>
+
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+
+                <tr mat-row *matRowDef="
+                            let row;
+                            columns: displayedColumns
+                        "></tr>
+
+            </table>
+
+            } @else {
+
+            <div class="empty-state">
+
+                <div class="empty-icon">
+                    <span class="material-icons">
+                        school
+                    </span>
+                </div>
+
+                <h3>
+                    No hay estudiantes registrados
+                </h3>
+
+                <p>
+                    Comienza registrando el primer estudiante del sistema.
+                </p>
+
+                <button mat-stroked-button color="primary" type="button" (click)="openCreateModal()">
+                    Registrar estudiante
+                </button>
+
+            </div>
+
+            }
+
+        </div>
+
+        @if (items.length > 0) {
+
+        <mat-paginator [length]="total" [pageSize]="pageSize" [pageIndex]="page - 1" [pageSizeOptions]="[5, 10, 20]"
+            (page)="onPage($event)"></mat-paginator>
+
+        }
+
+    </mat-card-content>
+
+</mat-card>

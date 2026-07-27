@@ -1,0 +1,241 @@
+<div class="page-header">
+    <div class="header-content">
+        <button mat-button type="button" routerLink="/support-requests" class="back-btn">
+            <span class="material-icons">arrow_back</span>
+            <span>Volver a solicitudes</span>
+        </button>
+
+        @if (item) {
+        <div class="title-section">
+            <div class="title-icon">
+                <span class="material-icons">request_quote</span>
+            </div>
+            <div class="title-content">
+                <div class="title-row">
+                    <h1 class="page-title">Detalle de solicitud</h1>
+                    <span class="status-badge" [ngClass]="'status-' + item.status.toLowerCase()">
+                        {{ statusLabel(item.status) }}
+                    </span>
+                </div>
+                <p class="page-subtitle">
+                    Consulta la información y el historial de esta solicitud de apoyo.
+                </p>
+            </div>
+        </div>
+        }
+    </div>
+</div>
+
+@if (error) {
+<div class="feedback-message error">
+    <span class="material-icons">error_outline</span>
+    <span>{{ error }}</span>
+</div>
+}
+
+@if (item) {
+<div class="detail-layout">
+    <div class="main-column">
+        <mat-card class="detail-card">
+            <div class="card-header">
+                <div class="card-header-icon">
+                    <span class="material-icons">description</span>
+                </div>
+                <div>
+                    <h2>Información de la solicitud</h2>
+                    <p>Datos principales de la solicitud de apoyo económico.</p>
+                </div>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="info-label">Estudiante</span>
+                    <div class="student-info">
+                        <span class="avatar">{{ item.studentName.charAt(0) }}</span>
+                        <span class="info-value">{{ item.studentName }}</span>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-label">Tipo de apoyo</span>
+                    <span class="type-tag">{{ typeLabel(item.type) }}</span>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-label">Monto solicitado</span>
+                    <span class="amount-value">$ {{ item.requestedAmount | number }}</span>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-label">Estado actual</span>
+                    <span class="status-badge" [ngClass]="'status-' + item.status.toLowerCase()">
+                        {{ statusLabel(item.status) }}
+                    </span>
+                </div>
+
+                <div class="info-item full-info">
+                    <span class="info-label">Descripción</span>
+                    <div class="description-box">{{ item.description }}</div>
+                </div>
+            </div>
+        </mat-card>
+
+        <mat-card class="detail-card">
+            <div class="card-header">
+                <div class="card-header-icon">
+                    <span class="material-icons">history</span>
+                </div>
+                <div>
+                    <h2>Historial de estados</h2>
+                    <p>Consulta los cambios realizados sobre esta solicitud.</p>
+                </div>
+            </div>
+
+            @if (!item.history.length) {
+            <div class="empty-state">
+                <div class="empty-icon">
+                    <span class="material-icons">history_toggle_off</span>
+                </div>
+                <h3>Sin historial todavía</h3>
+                <p>Esta solicitud aún no ha tenido cambios de estado.</p>
+            </div>
+            } @else {
+            <div class="timeline">
+                @for (h of item.history; track h.changedAt) {
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <span class="material-icons">sync_alt</span>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="status-change">
+                                <span class="history-status previous">
+                                    {{ statusLabel(h.previousStatus) }}
+                                </span>
+                                <span class="material-icons arrow-icon">arrow_forward</span>
+                                <span class="history-status current">
+                                    {{ statusLabel(h.newStatus) }}
+                                </span>
+                            </div>
+                            <span class="timeline-date">{{ h.changedAt | date: 'medium' }}</span>
+                        </div>
+                        @if (h.observation) {
+                        <div class="observation">
+                            <span class="material-icons">notes</span>
+                            <span>{{ h.observation }}</span>
+                        </div>
+                        }
+                    </div>
+                </div>
+                }
+            </div>
+            }
+        </mat-card>
+    </div>
+
+    <div class="side-column">
+        <mat-card class="detail-card metadata-card">
+            <div class="card-header">
+                <div class="card-header-icon">
+                    <span class="material-icons">event</span>
+                </div>
+                <div>
+                    <h2>Información temporal</h2>
+                    <p>Fechas de seguimiento.</p>
+                </div>
+            </div>
+
+            <div class="metadata-list">
+                <div class="metadata-item">
+                    <div class="metadata-icon">
+                        <span class="material-icons">calendar_today</span>
+                    </div>
+                    <div>
+                        <span class="metadata-label">Fecha de creación</span>
+                        <span class="metadata-value">{{ item.createdAt | date: 'medium' }}</span>
+                    </div>
+                </div>
+                <div class="metadata-item">
+                    <div class="metadata-icon">
+                        <span class="material-icons">update</span>
+                    </div>
+                    <div>
+                        <span class="metadata-label">Última actualización</span>
+                        <span class="metadata-value">{{ item.updatedAt | date: 'medium' }}</span>
+                    </div>
+                </div>
+            </div>
+        </mat-card>
+
+        @if (auth.getRole() === 'Advisor') {
+        <mat-card class="detail-card status-card">
+            <div class="card-header">
+                <div class="card-header-icon">
+                    <span class="material-icons">published_with_changes</span>
+                </div>
+                <div>
+                    <h2>Gestionar solicitud</h2>
+                    <p>
+                        @if (isFinalStatus) {
+                        Esta solicitud ya está cerrada. No se permiten más cambios de estado.
+                        } @else {
+                        Actualiza el estado. La observación es obligatoria.
+                        }
+                    </p>
+                </div>
+            </div>
+
+            @if (isFinalStatus) {
+            <div class="feedback-message error" style="margin-bottom: 0">
+                <span class="material-icons">lock</span>
+                <span>
+                    Estado final: <strong>{{ statusLabel(item.status) }}</strong>.
+                    No se puede actualizar.
+                </span>
+            </div>
+            } @else {
+            <form [formGroup]="statusForm" (ngSubmit)="changeStatus()" class="status-form">
+                <mat-form-field appearance="outline" class="full-width" floatLabel="always">
+                    <mat-label>Nuevo estado</mat-label>
+                    <mat-select formControlName="newStatus" panelClass="support-select-panel">
+                        <mat-option value="Pending">Pendiente</mat-option>
+                        <mat-option value="UnderReview">En revisión</mat-option>
+                        <mat-option value="Approved">Aprobado</mat-option>
+                        <mat-option value="Rejected">Rechazado</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="full-width" floatLabel="always">
+                    <mat-label>Observación *</mat-label>
+                    <textarea matInput rows="5" maxlength="500" formControlName="observation"
+                        placeholder="Agrega una observación sobre el cambio (obligatorio)..."></textarea>
+                    <mat-hint align="end">
+                        {{ statusForm.controls.observation.value.length }}/500
+                    </mat-hint>
+                    @if (
+                    statusForm.controls.observation.touched &&
+                    statusForm.controls.observation.invalid
+                    ) {
+                    <mat-error>La observación es obligatoria (mínimo 3 caracteres).</mat-error>
+                    }
+                </mat-form-field>
+
+                @if (message) {
+                <div class="feedback-message success">
+                    <span class="material-icons">check_circle_outline</span>
+                    <span>{{ message }}</span>
+                </div>
+                }
+
+                <button mat-raised-button color="primary" type="submit" class="update-btn"
+                    [disabled]="statusForm.invalid || saving">
+                    <span class="material-icons">save</span>
+                    {{ saving ? 'Actualizando…' : 'Actualizar estado' }}
+                </button>
+            </form>
+            }
+        </mat-card>
+        }
+    </div>
+</div>
+}
