@@ -2,105 +2,275 @@
     <header class="portal-header">
         <div>
             <h1>Mi portal</h1>
-            <p class="greeting">Hola, {{ auth.getFullName() }}</p>
+            <p class="greeting">
+                Hola, {{ auth.getFullName() }}
+            </p>
         </div>
+
         @if (profile) {
         <button mat-raised-button color="primary" type="button" class="btn-new" (click)="openCreateModal()">
-            <span class="material-icons">add</span>
+
+            <span class="material-icons">
+                add
+            </span>
+
             Nueva solicitud
         </button>
         }
     </header>
 
+
     @if (loading) {
-    <p class="muted">Cargando tu perfil…</p>
+    <p class="muted">
+        Cargando tu perfil…
+    </p>
     }
+
 
     @if (profile) {
     <mat-card class="block profile-card">
+
         <div class="section-title">
-            <span class="material-icons">person</span>
+            <span class="material-icons">
+                person
+            </span>
+
             Mi perfil
         </div>
-        <p class="profile-name"><strong>{{ profile.fullName }}</strong></p>
-        <p class="profile-meta">{{ profile.email }}</p>
-        <p class="profile-meta">
-            {{ profile.documentType }} {{ profile.documentNumber }} ·
-            {{ profile.academicProgram }} · Semestre {{ profile.semester }}
+
+        <p class="profile-name">
+            <strong>
+                {{ profile.fullName }}
+            </strong>
         </p>
+
+        <p class="profile-meta">
+            {{ profile.email }}
+        </p>
+
+        <p class="profile-meta">
+            {{ profile.documentType }}
+            {{ profile.documentNumber }}
+            ·
+            {{ profile.academicProgram }}
+            · Semestre
+            {{ profile.semester }}
+        </p>
+
     </mat-card>
     }
+
 
     @if (error) {
     <div class="feedback-message">
-        <span class="material-icons">error_outline</span>
-        <span>{{ error }}</span>
+
+        <span class="material-icons">
+            error_outline
+        </span>
+
+        <span>
+            {{ error }}
+        </span>
+
     </div>
     }
+
 
     @if (message) {
     <div class="feedback-message success">
-        <span class="material-icons">check_circle</span>
-        <span>{{ message }}</span>
+
+        <span class="material-icons">
+            check_circle
+        </span>
+
+        <span>
+            {{ message }}
+        </span>
+
     </div>
     }
 
-    <h2 class="section-spacing">Mis solicitudes de apoyo</h2>
+
+    <h2 class="section-spacing">
+        Mis solicitudes de apoyo
+    </h2>
+
 
     @if (profile && items.length === 0 && !error && !loading) {
     <mat-card class="block empty-state">
-        <span class="material-icons empty-icon">inbox</span>
-        <p>Aún no tienes solicitudes.</p>
+
+        <span class="material-icons empty-icon">
+            inbox
+        </span>
+
+        <p>
+            Aún no tienes solicitudes.
+        </p>
+
         <button mat-stroked-button color="primary" type="button" (click)="openCreateModal()">
+
             Crear la primera
+
         </button>
+
     </mat-card>
     }
+
 
     @if (items.length > 0) {
     <mat-card class="block table-card">
-        <table mat-table [dataSource]="items" class="full">
-            <ng-container matColumnDef="type">
-                <th mat-header-cell *matHeaderCellDef>Tipo</th>
-                <td mat-cell *matCellDef="let r">{{ typeLabel(r.type) }}</td>
-            </ng-container>
-            <ng-container matColumnDef="requestedAmount">
-                <th mat-header-cell *matHeaderCellDef>Monto</th>
-                <td mat-cell *matCellDef="let r">{{ r.requestedAmount | number }}</td>
-            </ng-container>
-            <ng-container matColumnDef="status">
-                <th mat-header-cell *matHeaderCellDef>Estado</th>
-                <td mat-cell *matCellDef="let r">
-                    <span class="status-badge" [attr.data-status]="r.status">{{ statusLabel(r.status) }}</span>
-                </td>
-            </ng-container>
-            <ng-container matColumnDef="updatedAt">
-                <th mat-header-cell *matHeaderCellDef>Actualizado</th>
-                <td mat-cell *matCellDef="let r">{{ r.updatedAt | date: 'short' }}</td>
-            </ng-container>
-            <ng-container matColumnDef="actions">
-                <th mat-header-cell *matHeaderCellDef>Acciones</th>
-                <td mat-cell *matCellDef="let r" class="actions-cell">
-                    <a mat-stroked-button color="primary" [routerLink]="['/support-requests', r.id]">Detalle</a>
-                    <button mat-raised-button color="accent" type="button" class="btn-download"
-                        (click)="downloadConstancyText(r)">
-                        <span class="material-icons">description</span>
-                        Constancia TXT
-                    </button>
-                    <button mat-raised-button color="primary" type="button" class="btn-download"
-                        (click)="downloadConstancyPdf(r)">
-                        <span class="material-icons">picture_as_pdf</span>
-                        Constancia PDF
-                    </button>
-                </td>
-            </ng-container>
-            <tr mat-header-row *matHeaderRowDef="columns"></tr>
-            <tr mat-row *matRowDef="let row; columns: columns"></tr>
-        </table>
+
+        <div class="table-wrapper">
+
+            <table mat-table [dataSource]="items" class="full">
+
+                <ng-container matColumnDef="type">
+
+                    <th mat-header-cell *matHeaderCellDef>
+
+                        Tipo
+
+                    </th>
+
+                    <td mat-cell *matCellDef="let r">
+
+                        {{ typeLabel(r.type) }}
+
+                    </td>
+
+                </ng-container>
+
+
+                <ng-container matColumnDef="requestedAmount">
+
+                    <th mat-header-cell *matHeaderCellDef>
+
+                        Monto
+
+                    </th>
+
+                    <td mat-cell *matCellDef="let r">
+
+                        {{ r.requestedAmount | number }}
+
+                    </td>
+
+                </ng-container>
+
+
+                <ng-container matColumnDef="status">
+
+                    <th mat-header-cell *matHeaderCellDef>
+
+                        Estado
+
+                    </th>
+
+                    <td mat-cell *matCellDef="let r">
+
+                        <span class="status-badge" [attr.data-status]="r.status">
+
+                            {{ statusLabel(r.status) }}
+
+                        </span>
+
+                    </td>
+
+                </ng-container>
+
+
+                <ng-container matColumnDef="updatedAt">
+
+                    <th mat-header-cell *matHeaderCellDef>
+
+                        Actualizado
+
+                    </th>
+
+                    <td mat-cell *matCellDef="let r">
+
+                        {{ r.updatedAt | date: 'short' }}
+
+                    </td>
+
+                </ng-container>
+
+
+                <ng-container matColumnDef="actions">
+
+                    <th mat-header-cell *matHeaderCellDef>
+
+                        Acciones
+
+                    </th>
+
+                    <td mat-cell *matCellDef="let r" class="actions-cell">
+
+
+                        <a mat-stroked-button color="primary" [routerLink]="[
+                                '/support-requests',
+                                r.id
+                            ]" class="btn-action btn-detail">
+
+                            <span class="material-icons">
+                                visibility
+                            </span>
+
+                            Detalle
+
+                        </a>
+
+
+                        <button mat-stroked-button type="button" class="btn-action btn-txt"
+                            (click)="downloadConstancyText(r)">
+
+                            <span class="material-icons">
+                                description
+                            </span>
+
+                            TXT
+
+                        </button>
+
+
+                        <button mat-stroked-button type="button" class="btn-action btn-pdf"
+                            (click)="downloadConstancyPdf(r)">
+
+                            <span class="material-icons">
+                                picture_as_pdf
+                            </span>
+
+                            PDF
+
+                        </button>
+
+                    </td>
+
+                </ng-container>
+
+
+                <tr mat-header-row *matHeaderRowDef="columns">
+                </tr>
+
+
+                <tr mat-row *matRowDef="
+                        let row;
+                        columns: columns
+                    ">
+                </tr>
+
+            </table>
+
+        </div>
+
     </mat-card>
     }
+
 </div>
 
+
 @if (showCreateModal) {
+
 <app-create-request-modal (closed)="onModalClosed()" (created)="onRequestCreated()" />
+
 }
