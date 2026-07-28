@@ -7,9 +7,15 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import {
+    getSupportRequestStatusLabel,
+    getSupportRequestTypeLabel,
+    isFinalSupportRequestStatus
+} from '../../../core/const/support-request.constants';
 import { SupportRequestService } from '../../../core/services/support-request.service';
 import { AuthService } from '../../../core/services/auth.service';
 import { SupportRequestDto } from '../../../core/models/support-request.model';
+import { extractApiErrorMessage } from '../../../core/utils/http-error.util';
 
 @Component({
     selector: 'app-support-request-detail',
@@ -32,7 +38,9 @@ export class SupportRequestDetailComponent implements OnInit {
     private readonly api = inject(SupportRequestService);
     private readonly fb = inject(FormBuilder);
 
-    auth = inject(AuthService);
+    readonly auth = inject(AuthService);
+    readonly statusLabel = getSupportRequestStatusLabel;
+    readonly typeLabel = getSupportRequestTypeLabel;
 
     item?: SupportRequestDto;
     error = '';
@@ -45,14 +53,12 @@ export class SupportRequestDetailComponent implements OnInit {
         observation: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(500)]]
     });
 
-    /** Aprobado o Rechazado: no se puede volver a cambiar */
     get isFinalStatus(): boolean {
-        const status = this.item?.status;
-        return status === 'Approved' || status === 'Rejected';
+        return !!this.item && isFinalSupportRequestStatus(this.item.status);
     }
 
     get canChangeStatus(): boolean {
-        return this.auth.getRole() === 'Advisor' && !!this.item && !this.isFinalStatus;
+        return this.auth.isAdvisor() && !!this.item && !this.isFinalStatus;
     }
 
     ngOnInit(): void {
@@ -128,30 +134,11 @@ export class SupportRequestDetailComponent implements OnInit {
                 },
                 error: (err) => {
                     this.saving = false;
-                    this.error =
-                        err?.error?.title ||
-                        err?.error?.detail ||
-                        'No fue posible actualizar el estado.';
+                    this.error = extractApiErrorMessage(
+                        err,
+                        'No fue posible actualizar el estado.'
+                    );
                 }
             });
-    }
-
-    statusLabel(status: string): string {
-        const map: Record<string, string> = {
-            Pending: 'Pendiente',
-            UnderReview: 'En revisión',
-            Approved: 'Aprobado',
-            Rejected: 'Rechazado'
-        };
-        return map[status] ?? status;
-    }
-
-    typeLabel(type: string): string {
-        const map: Record<string, string> = {
-            Scholarship: 'Beca',
-            Credit: 'Crédito',
-            Subsidy: 'Subsidio'
-        };
-        return map[type] ?? type;
     }
 }

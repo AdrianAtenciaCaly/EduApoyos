@@ -19,6 +19,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { StudentService } from '../../../core/services/student.service';
 import { SupportRequestService } from '../../../core/services/support-request.service';
 import { StudentDto } from '../../../core/models/student.model';
+import { extractApiErrorMessage } from '../../../core/utils/http-error.util';
 
 @Component({
     selector: 'app-support-request-form',
@@ -45,7 +46,7 @@ export class SupportRequestFormComponent implements OnInit {
     students: StudentDto[] = [];
     error = '';
 
-    form = this.fb.nonNullable.group({
+    readonly form = this.fb.nonNullable.group({
         studentId: ['', Validators.required],
         type: ['Scholarship', Validators.required],
         requestedAmount: [
@@ -99,10 +100,10 @@ export class SupportRequestFormComponent implements OnInit {
                     ]);
                 },
                 error: (err) => {
-                    this.error =
-                        err?.error?.title ||
-                        err?.error?.detail ||
-                        'No fue posible crear la solicitud.';
+                    this.error = extractApiErrorMessage(
+                        err,
+                        'No fue posible crear la solicitud.'
+                    );
                 }
             });
     }

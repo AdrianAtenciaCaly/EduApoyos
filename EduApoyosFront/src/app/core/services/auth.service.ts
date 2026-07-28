@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { BehaviorSubject, tap } from 'rxjs';
 import { environment } from '../../../environments/environment';
+import { USER_ROLES } from '../const/user-roles';
 import { AuthResponse, LoginRequest, RegisterRequest } from '../models/auth.model';
 
 const TOKEN_KEY = 'eduapoyos_token';
@@ -53,6 +54,14 @@ export class AuthService {
 
     isLoggedIn(): boolean {
         return !!this.getToken();
+    }
+
+    isAdvisor(): boolean {
+        return this.getRole() === USER_ROLES.ADVISOR;
+    }
+
+    isStudent(): boolean {
+        return this.getRole() === USER_ROLES.STUDENT;
     }
 
     private persist(res: AuthResponse): void {

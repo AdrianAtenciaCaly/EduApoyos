@@ -167,7 +167,7 @@
             </div>
         </mat-card>
 
-        @if (auth.getRole() === 'Advisor') {
+        @if (auth.isAdvisor()) {
         <mat-card class="detail-card status-card">
             <div class="card-header">
                 <div class="card-header-icon">

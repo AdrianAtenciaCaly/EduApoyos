@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { USER_ROLES } from './core/const/user-roles';
 import { authGuard } from './core/guards/auth.guard';
 import { roleGuard } from './core/guards/role.guard';
 
@@ -12,7 +13,7 @@ export const routes: Routes = [
     {
         path: 'advisor',
         canActivate: [authGuard, roleGuard],
-        data: { roles: ['Advisor'] },
+        data: { roles: [USER_ROLES.ADVISOR] },
         loadComponent: () =>
             import('./features/advisor/dashboard/advisor-dashboard.component').then(
                 (m) => m.AdvisorDashboardComponent
@@ -21,7 +22,7 @@ export const routes: Routes = [
     {
         path: 'support-requests',
         canActivate: [authGuard, roleGuard],
-        data: { roles: ['Advisor'] },
+        data: { roles: [USER_ROLES.ADVISOR] },
         loadComponent: () =>
             import('./features/support-requests/list/support-request-list.component').then(
                 (m) => m.SupportRequestListComponent
@@ -30,7 +31,7 @@ export const routes: Routes = [
     {
         path: 'support-requests/new',
         canActivate: [authGuard, roleGuard],
-        data: { roles: ['Advisor'] },
+        data: { roles: [USER_ROLES.ADVISOR] },
         loadComponent: () =>
             import('./features/support-requests/form/support-request-form.component').then(
                 (m) => m.SupportRequestFormComponent
@@ -47,7 +48,7 @@ export const routes: Routes = [
     {
         path: 'student',
         canActivate: [authGuard, roleGuard],
-        data: { roles: ['Student'] },
+        data: { roles: [USER_ROLES.STUDENT] },
         loadComponent: () =>
             import('./features/student/portal/student-portal.component').then(
                 (m) => m.StudentPortalComponent

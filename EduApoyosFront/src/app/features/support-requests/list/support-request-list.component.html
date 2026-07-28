@@ -12,6 +12,13 @@
     </a>
 </div>
 
+@if (error) {
+<div class="feedback-message error">
+    <span class="material-icons">error_outline</span>
+    <span>{{ error }}</span>
+</div>
+}
+
 <mat-card class="filters-card">
     <div class="filters-header">
         <div class="filters-title">

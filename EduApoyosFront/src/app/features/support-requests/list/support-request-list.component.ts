@@ -16,6 +16,10 @@ import {
     PageEvent
 } from '@angular/material/paginator';
 
+import {
+    getSupportRequestStatusLabel,
+    getSupportRequestTypeLabel
+} from '../../../core/const/support-request.constants';
 import { SupportRequestService } from '../../../core/services/support-request.service';
 import { SupportRequestDto } from '../../../core/models/support-request.model';
 
@@ -40,6 +44,9 @@ export class SupportRequestListComponent implements OnInit {
     private readonly api = inject(SupportRequestService);
     private readonly fb = inject(FormBuilder);
 
+    readonly getStatusLabel = getSupportRequestStatusLabel;
+    readonly getTypeLabel = getSupportRequestTypeLabel;
+
     columns = [
         'studentName',
         'type',
@@ -50,10 +57,10 @@ export class SupportRequestListComponent implements OnInit {
     ];
 
     items: SupportRequestDto[] = [];
-
     total = 0;
     page = 1;
     pageSize = 10;
+    error = '';
 
     filters = this.fb.nonNullable.group({
         status: [''],
@@ -66,15 +73,11 @@ export class SupportRequestListComponent implements OnInit {
 
     get hasActiveFilters(): boolean {
         const { status, type } = this.filters.getRawValue();
-
         return Boolean(status || type);
     }
 
     load(): void {
-        const {
-            status,
-            type
-        } = this.filters.getRawValue();
+        const { status, type } = this.filters.getRawValue();
 
         this.api
             .getAll(
@@ -87,6 +90,10 @@ export class SupportRequestListComponent implements OnInit {
                 next: (res) => {
                     this.items = res.items;
                     this.total = res.totalCount;
+                    this.error = '';
+                },
+                error: () => {
+                    this.error = 'No fue posible cargar las solicitudes de apoyo.';
                 }
             });
     }
@@ -101,16 +108,12 @@ export class SupportRequestListComponent implements OnInit {
             status: '',
             type: ''
         });
-
         this.page = 1;
         this.load();
     }
 
-    removeFilter(
-        filter: 'status' | 'type'
-    ): void {
+    removeFilter(filter: 'status' | 'type'): void {
         this.filters.controls[filter].setValue('');
-
         this.page = 1;
         this.load();
     }
@@ -118,28 +121,6 @@ export class SupportRequestListComponent implements OnInit {
     onPage(event: PageEvent): void {
         this.page = event.pageIndex + 1;
         this.pageSize = event.pageSize;
-
         this.load();
-    }
-
-    getStatusLabel(status: string): string {
-        const labels: Record<string, string> = {
-            Pending: 'Pendiente',
-            UnderReview: 'En revisión',
-            Approved: 'Aprobado',
-            Rejected: 'Rechazado'
-        };
-
-        return labels[status] ?? status;
-    }
-
-    getTypeLabel(type: string): string {
-        const labels: Record<string, string> = {
-            Scholarship: 'Beca',
-            Credit: 'Crédito',
-            Subsidy: 'Subsidio'
-        };
-
-        return labels[type] ?? type;
     }
 }

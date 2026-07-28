@@ -7,7 +7,7 @@
     </div>
     
     <nav class="nav-links">
-      @if (auth.getRole() === 'Advisor') {
+      @if (auth.isAdvisor()) {
       <a routerLink="/advisor" routerLinkActive="active" class="nav-item">
         <span class="material-icons nav-icon">people</span>
         <span>Estudiantes</span>
@@ -21,7 +21,7 @@
         <span>Nueva Solicitud</span>
       </a>
       }
-      @if (auth.getRole() === 'Student') {
+      @if (auth.isStudent()) {
       <a routerLink="/student" routerLinkActive="active" class="nav-item">
         <span class="material-icons nav-icon">space_dashboard</span>
         <span>Mi Portal</span>

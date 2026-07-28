@@ -1,5 +1,6 @@
 import { inject } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivateFn, Router } from '@angular/router';
+import { USER_ROLES } from '../const/user-roles';
 import { AuthService } from '../services/auth.service';
 
 export const roleGuard: CanActivateFn = (route: ActivatedRouteSnapshot) => {
@@ -10,5 +11,7 @@ export const roleGuard: CanActivateFn = (route: ActivatedRouteSnapshot) => {
     if (!auth.isLoggedIn()) return router.createUrlTree(['/login']);
     const role = auth.getRole();
     if (role && roles.includes(role)) return true;
-    return router.createUrlTree([role === 'Student' ? '/student' : '/advisor']);
+    return router.createUrlTree([
+        role === USER_ROLES.STUDENT ? '/student' : '/advisor'
+    ]);
 };

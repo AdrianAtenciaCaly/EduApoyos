@@ -5,14 +5,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { CreateSupportRequestRequest } from '../../../core/models/support-request.model';
 import { SupportRequestService } from '../../../core/services/support-request.service';
-
-export interface CreateRequestPayload {
-    studentId: string;
-    type: string;
-    requestedAmount: number;
-    description: string;
-}
+import { extractApiErrorMessage } from '../../../core/utils/http-error.util';
 
 @Component({
     selector: 'app-create-request-modal',
@@ -29,10 +24,9 @@ export interface CreateRequestPayload {
     styleUrl: './create-request-modal.component.scss'
 })
 export class CreateRequestModalComponent {
-    private fb = inject(FormBuilder);
-    private requestsApi = inject(SupportRequestService);
+    private readonly fb = inject(FormBuilder);
+    private readonly requestsApi = inject(SupportRequestService);
 
-    /** Student id del perfil logueado (lo pasa el portal) */
     studentId = '';
 
     @Output() closed = new EventEmitter<void>();
@@ -47,7 +41,6 @@ export class CreateRequestModalComponent {
         description: ['', [Validators.required, Validators.maxLength(500)]]
     });
 
-    /** Llamar desde el padre al abrir, con el id del estudiante */
     open(studentId: string): void {
         this.studentId = studentId;
         this.error = '';
@@ -76,7 +69,7 @@ export class CreateRequestModalComponent {
         this.error = '';
 
         const raw = this.form.getRawValue();
-        const body: CreateRequestPayload = {
+        const body: CreateSupportRequestRequest = {
             studentId: this.studentId,
             type: raw.type,
             requestedAmount: Number(raw.requestedAmount),
@@ -91,10 +84,10 @@ export class CreateRequestModalComponent {
             },
             error: (err) => {
                 this.saving = false;
-                this.error =
-                    err?.error?.title ||
-                    err?.error?.detail ||
-                    'No se pudo crear la solicitud de apoyo.';
+                this.error = extractApiErrorMessage(
+                    err,
+                    'No se pudo crear la solicitud de apoyo.'
+                );
             }
         });
     }

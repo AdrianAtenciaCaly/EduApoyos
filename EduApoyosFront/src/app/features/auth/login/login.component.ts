@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 
+import { USER_ROLES } from '../../../core/const/user-roles';
 import { AuthService } from '../../../core/services/auth.service';
 
 @Component({
@@ -67,7 +68,7 @@ export class LoginComponent {
                 next: (res) => {
                     this.loading = false;
 
-                    if (res.role === 'Advisor') {
+                    if (res.role === USER_ROLES.ADVISOR) {
                         this.router.navigateByUrl('/advisor');
 
                         return;

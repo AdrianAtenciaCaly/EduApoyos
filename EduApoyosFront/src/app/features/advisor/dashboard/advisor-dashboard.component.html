@@ -66,6 +66,121 @@
 </div>
 }
 
+<mat-card class="filters-card">
+    <div class="filters-header">
+        <div class="filters-title">
+            <span class="material-icons">filter_alt</span>
+
+            <div>
+                <h3>Buscar estudiantes</h3>
+                <p>Filtra el listado por programa, tipo de documento o semestre.</p>
+            </div>
+        </div>
+
+        @if (hasActiveFilters) {
+        <button mat-button type="button" class="clear-filters-btn" (click)="clearFilters()">
+            <span class="material-icons">filter_alt_off</span>
+            Limpiar filtros
+        </button>
+        }
+    </div>
+
+    <form [formGroup]="filters" (ngSubmit)="applyFilters()" class="filters-form">
+        <mat-form-field appearance="outline" class="filter-field">
+            <mat-label>Programa académico</mat-label>
+
+            <mat-select formControlName="academicProgram">
+                <mat-option value="">Todos los programas</mat-option>
+
+                @for (program of academicPrograms; track program.value) {
+                <mat-option [value]="program.value">
+                    {{ program.label }}
+                </mat-option>
+                }
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="filter-field">
+            <mat-label>Tipo de documento</mat-label>
+
+            <mat-select formControlName="documentType">
+                <mat-option value="">Todos los tipos</mat-option>
+
+                @for (docType of documentTypes; track docType.value) {
+                <mat-option [value]="docType.value">
+                    {{ docType.label }}
+                </mat-option>
+                }
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="filter-field">
+            <mat-label>Semestre</mat-label>
+
+            <mat-select formControlName="semester">
+                <mat-option value="">Todos los semestres</mat-option>
+
+                @for (semester of semesterOptions; track semester) {
+                <mat-option [value]="semester.toString()">
+                    Semestre {{ semester }}
+                </mat-option>
+                }
+            </mat-select>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" class="filter-btn">
+            <span class="material-icons btn-icon">search</span>
+            <span>Buscar</span>
+        </button>
+    </form>
+
+    @if (hasActiveFilters) {
+    <div class="active-filters">
+        <div class="active-filters-header">
+            <span class="material-icons">tune</span>
+            <span>Filtros aplicados</span>
+        </div>
+
+        <div class="filter-tags">
+            @if (filters.controls.academicProgram.value) {
+            <div class="filter-tag">
+                <span class="filter-tag-label">Programa:</span>
+                <span class="filter-tag-value">{{ filters.controls.academicProgram.value }}</span>
+                <button type="button" class="remove-filter" (click)="removeFilter('academicProgram')"
+                    aria-label="Eliminar filtro de programa">
+                    <span class="material-icons">close</span>
+                </button>
+            </div>
+            }
+
+            @if (filters.controls.documentType.value) {
+            <div class="filter-tag">
+                <span class="filter-tag-label">Documento:</span>
+                <span class="filter-tag-value">
+                    {{ getDocumentTypeLabel(filters.controls.documentType.value) }}
+                </span>
+                <button type="button" class="remove-filter" (click)="removeFilter('documentType')"
+                    aria-label="Eliminar filtro de documento">
+                    <span class="material-icons">close</span>
+                </button>
+            </div>
+            }
+
+            @if (filters.controls.semester.value) {
+            <div class="filter-tag">
+                <span class="filter-tag-label">Semestre:</span>
+                <span class="filter-tag-value">Sem. {{ filters.controls.semester.value }}</span>
+                <button type="button" class="remove-filter" (click)="removeFilter('semester')"
+                    aria-label="Eliminar filtro de semestre">
+                    <span class="material-icons">close</span>
+                </button>
+            </div>
+            }
+        </div>
+    </div>
+    }
+</mat-card>
+
 <div class="stats-grid">
 
     <div class="stat-card">
@@ -221,25 +336,41 @@
             } @else {
 
             <div class="empty-state">
-
                 <div class="empty-icon">
                     <span class="material-icons">
+                        @if (hasActiveFilters) {
+                        search_off
+                        } @else {
                         school
+                        }
                     </span>
                 </div>
 
                 <h3>
+                    @if (hasActiveFilters) {
+                    No se encontraron estudiantes
+                    } @else {
                     No hay estudiantes registrados
+                    }
                 </h3>
 
                 <p>
+                    @if (hasActiveFilters) {
+                    Prueba con otros criterios de búsqueda o limpia los filtros.
+                    } @else {
                     Comienza registrando el primer estudiante del sistema.
+                    }
                 </p>
 
+                @if (hasActiveFilters) {
+                <button mat-stroked-button color="primary" type="button" (click)="clearFilters()">
+                    Limpiar filtros
+                </button>
+                } @else {
                 <button mat-stroked-button color="primary" type="button" (click)="openCreateModal()">
                     Registrar estudiante
                 </button>
-
+                }
             </div>
 
             }
