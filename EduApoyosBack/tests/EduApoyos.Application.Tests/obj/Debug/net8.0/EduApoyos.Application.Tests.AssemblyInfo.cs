@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EduApoyos.Application.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c6f5bb02f8d166894cd5cc3db1fe69fb92836c88")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c5cd5ea69dba9b19e06a972ca0cbcc3cff400342")]
 [assembly: System.Reflection.AssemblyProductAttribute("EduApoyos.Application.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EduApoyos.Application.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
